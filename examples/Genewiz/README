@@ -1,0 +1,14 @@
+Extract seqecning info from a seqence data zip file
+
+-f path to the seqencing zip file
+--sub a protein sub seqence to look for in each dna seqence (useful for finding His tags ect..)
+
+
+example
+%> python ../../Genewiz.py -f ./10-220955815_seq.zip  
+
+%> python ../../Genewiz.py -f ./10-220955815_seq.zip  --sub HHHH
+
+prgram will output:
+(1) 10-220955815_seq_aa.fasta
+(2) 10-220955815_seq_dna.fasta

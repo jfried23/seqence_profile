@@ -1,0 +1,19 @@
+Provides pertinent information about an input DNA or protein seqence
+
+flags:
+-s PUT YOU SEQENCE AFTER THIS FLAG....NO SPACES IN SEQENCE
+-p for input DNA seqences (optional) give a integer number representing the DNA frame shift (0-2)
+--sub for input DNA seqences (optional) give a short one letter protein seqence that should be found in the DNA seqence to guide phasing.
+	useful if your seqence has as His tag you can use "--sub HHH"
+
+example usage 
+%> python ../../SeqObject.py -s gcgctgctgtctaacatcatctactctgacgacctgccggaatacgcgcgtagcaacgaaagcttgaattctatcgag
+
+%> python ../../SeqObject.py -s gcgctgctgtctaacatcatctactctgacgacctgccggaatacgcgcgtagcaacgaaagcttgaattctatcgag --sub NIIY
+
+%> python ../../SeqObject.py -s gcgctgctgtctaacatcatctactctgacgacctgccggaatacgcgcgtagcaacgaaagcttgaattctatcgag -p 2
+
+%> python ../../SeqObject.py -s ALLSNIIYSDDLPEYARSNESLNSIE
+
+ 
+

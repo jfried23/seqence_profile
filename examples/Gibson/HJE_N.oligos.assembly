@@ -1,0 +1,28 @@
+vi:set nowrap:
+
+
+    1           5              10             15             20             25             30             35             40             45             50             55             60             65             70             75             80             85             90             95            100            105            110            115            120            125            
+ I  T  M  D  L  T  Y  A  Y  L  V  G  L  Y  E  G  D  G  Y  F  S  I  T  K  K  G  K  Y  L  T  Y  E  L  G  I  E  L  S  I  K  D  V  Q  L  I  Y  K  I  K  D  I  L  G  V  G  K  V  S  F  R  K  R  N  E  I  E  M  V  S  L  R  I  R  D  K  N  H  L  K  N  F  I  L  P  I  F  D  K  Y  P  M  I  T  N  K  Q  Y  D  Y  L  R  F  K  D  A  L  L  S  N  I  I  Y  S  D  D  L  P  E  Y  A  R  S  N  E  S  L  N  S  I  E 
+attaccatggacctgacctacgcttacctggttggtctgtacgaaggtgacggttacttctctatcaccaaaaaaggtaaatacctgacgtacgaactgggtatcgaactgtctatcaaagacgtacagctgatctacaaaatcaaggacatcctgggcgttggtaaagtttctttccgcaaacgtaatgaaatcgaaatggtttctctgcgtatccgtgacaaaaaccacctgaaaaacttcatcctgccgatcttcgacaaatacccgatgatcaccaacaaacagtacgactacctgcgtttcaaagacgcgctgctgtctaacatcatctactctgacgacctgccggaatacgcgcgtagcaacgaaagcttgaattctatcgag
+     |                                                                                                                                                                                                                                                                                                                                                                              |     |           
+   NcoI                                                                                                                                                                                                                                                                                                                                                                          HindIIIEcoRI         
+
+attaccatggacctgacctacgc       gttggtctgtacgaaggtgacggttacttctctatcaccaaaaa ggtaaatacctgacgtacgaactgggtatcgaactgtctatcaa  acgtacagctgatctacaaaatcaaggacatcctgggcgttggt       ctttccgcaaacgtaatgaaatcgaaatggtttctctgcgtatc       aaaaccacctgaaaaacttcatcctgccgatcttcgacaaatac cgatgatcaccaacaaacagtacgactacctgcgtttcaaagac     gctgtctaacatcatctactctgacgacctgccggaatacgcgc
+         ctggactggatgcgaatggaccaaccagacatgcttccac  ccaatgaagagatagtggttttttccatttatggactgcatgct   cccatagcttgacagatagtttctgcatgtcgactagatgtttt      tgtaggacccgcaaccatttcaaagaaaggcgtttgcattactt        ccaaagagacgcataggcactgtttttggtggactttttgaagt  gacggctagaagctgtttatgggctactagtggttgtttgtcat   gatggacgcaaagtttctgcgcgacgacagattgtagtagatga        gacggccttatgcgcgcatcgttgctttcgaacttaagatagctc
+startpos 3
+HJE_N                 +  1  attaccatggacctgacctacgc
+HJE_N                 -  1  caccttcgtacagaccaaccaggtaagcgtaggtcaggtc
+HJE_N                 +  2  gttggtctgtacgaaggtgacggttacttctctatcaccaaaaa
+HJE_N                 -  2  tcgtacgtcaggtatttaccttttttggtgatagagaagtaacc
+HJE_N                 +  3  ggtaaatacctgacgtacgaactgggtatcgaactgtctatcaa
+HJE_N                 -  3  ttttgtagatcagctgtacgtctttgatagacagttcgataccc
+HJE_N                 +  4  acgtacagctgatctacaaaatcaaggacatcctgggcgttggt
+HJE_N                 -  4  ttcattacgtttgcggaaagaaactttaccaacgcccaggatgt
+HJE_N                 +  5  ctttccgcaaacgtaatgaaatcgaaatggtttctctgcgtatc
+HJE_N                 -  5  tgaagtttttcaggtggtttttgtcacggatacgcagagaaacc
+HJE_N                 +  6  aaaaccacctgaaaaacttcatcctgccgatcttcgacaaatac
+HJE_N                 -  6  tactgtttgttggtgatcatcgggtatttgtcgaagatcggcag
+HJE_N                 +  7  cgatgatcaccaacaaacagtacgactacctgcgtttcaaagac
+HJE_N                 -  7  agtagatgatgttagacagcagcgcgtctttgaaacgcaggtag
+HJE_N                 +  8  gctgtctaacatcatctactctgacgacctgccggaatacgcgc
+HJE_N                 -  8  ctcgatagaattcaagctttcgttgctacgcgcgtattccggcag

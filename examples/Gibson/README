@@ -1,0 +1,14 @@
+Program for working with gibson assemblies
+Give it a gibson assembley file like that in HJE_N.oligos
+
+example use
+%> python ../../Gibson.py -f ./HJE_N.oligos
+
+program will output HJE_N.oligos.assembly
+
+To mutate a residue 16 Asp -> Asn and 115 Lue -> Arg in the assembly
+%> python ../../Gibson.py -f ./HJE_N.oligos D.16.N L.115.R
+
+program will output HJE_N.oligos.assembly and give you the new oligos that should be ordered to make these mutations.
+
+
