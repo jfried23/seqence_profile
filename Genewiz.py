@@ -1,5 +1,5 @@
-import lib.DNASeq as libDNA
-import lib.AASeq  as libAA
+import src.DNASeq as libDNA
+import src.AASeq  as libAA
 import string, sys, random, zipfile, os
 from string import lower
 from optparse import OptionParser

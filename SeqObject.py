@@ -1,5 +1,5 @@
-import lib.DNASeq as libDNA
-import lib.AASeq  as libAA
+import src.DNASeq as libDNA
+import src.AASeq  as libAA
 from optparse import OptionParser
 from os.path import isfile
 from os import system

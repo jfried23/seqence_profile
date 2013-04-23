@@ -1,4 +1,4 @@
-import lib.FragLib as libFrag
+import src.FragLib as libFrag
 import sys
 from optparse import OptionParser
 from string import split

@@ -1,6 +1,6 @@
-import lib.DNASeq as libDNA
-import lib.AASeq  as libAA
-import lib.NW_aln as NW
+import src.DNASeq as libDNA
+import src.AASeq  as libAA
+import src.NW_aln as NW
 
 import string, sys, random, zipfile, os,re
 from string import split, ascii_lowercase

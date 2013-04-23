@@ -1,6 +1,6 @@
-import lib.NW_aln as NW
-import lib.DNASeq as libDNA
-import lib.AASeq  as libAA
+import src.NW_aln as NW
+import src.DNASeq as libDNA
+import src.AASeq  as libAA
 import sys
 from optparse import OptionParser
 
