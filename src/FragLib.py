@@ -173,12 +173,12 @@ class FragLib( object ):
 			
 			if frag.is_fwd():
 				diff = st_pos - len(pos)
-				name_lbl = '|-> +' + str(frag.number)
+				name_lbl = '|-> '+frag.name + ' +'+str(frag.number)
 				pos_n += diff*' ' + name_lbl + (' '* ( len(frag)- len(name_lbl) ) )
 				pos   += diff*' ' + this_seq
 			if frag.is_rev():
 				diff = st_pos - len(neg)
-				name_lbl = '|<- -' + str(frag.number)
+				name_lbl = '|<- ' + frag.name +' -' + str(frag.number)
 				neg += diff*' ' + this_seq
 				neg_n += diff*' ' + name_lbl + (' '* ( len(frag)- len(name_lbl) ) )				
 		
