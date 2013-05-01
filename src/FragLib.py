@@ -165,7 +165,7 @@ class FragLib( object ):
 			ptr = ptr.overlap_data[1]
 
 	def algn_file_out(self): #Assumes the fragments were properly shuffled by __order_frags
-		pos,neg='',''
+		pos,pos_n,neg, neg_n='','','',''
 		seq = self.DNAobj.seq
 		for frag in self.frags:
 			st_pos = seq.find( frag.seq() )
@@ -173,10 +173,14 @@ class FragLib( object ):
 			
 			if frag.is_fwd():
 				diff = st_pos - len(pos)
-				pos += diff*' ' + this_seq
+				name_lbl = '|-> +' + str(frag.number)
+				pos_n += diff*' ' + name_lbl + (' '* ( len(frag)- len(name_lbl) ) )
+				pos   += diff*' ' + this_seq
 			if frag.is_rev():
 				diff = st_pos - len(neg)
-				neg += diff*' ' + this_seq				
+				name_lbl = '|<- -' + str(frag.number)
+				neg += diff*' ' + this_seq
+				neg_n += diff*' ' + name_lbl + (' '* ( len(frag)- len(name_lbl) ) )				
 		
 		mut_info=''
 		for i, one in enumerate(self.__made_mods):
@@ -184,8 +188,8 @@ class FragLib( object ):
 			mut_info += one+' '
 
 		return_data = "vi:set nowrap:\n\n"  +'\n'	
-		return_data += self.DNAobj.fancy_print( lw=len(seq) )
-		return_data += pos+'\n'+neg+'\n' 	
+		return_data += self.DNAobj.fancy_print( lw=len(seq)+3 )
+		return_data += pos_n+'\n'+pos+'\n'+neg+'\n'+neg_n+'\n'	
 		return_data += self.__str__()
 		
 		h=open( self.__path+'.assembly','w')
