@@ -27,7 +27,7 @@ def DNAScore():
 def ProtScore():
 	return ReadScoreMatrix( filename+'BLOSUM62')
 
-def NW(string1, string2, open_gap=-21, ext_gap = -3, matrix=None):
+def NW(string1, string2, open_gap=-100, ext_gap = -3, matrix=None):
 	"""Performs Needleman-Wunsch alignment of string1 and string2.
     	Prints out the alignment and returns the array of scores and pointers(arrows).
 
