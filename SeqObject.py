@@ -16,7 +16,6 @@ def get_user_input():
 	parser.add_option("--sub", dest="sub",default=None)
 	#parser.add_option("-Genewiz", dest="genewiz_file", default=None)
 	(options, args) = parser.parse_args()	
-
 	if options.file and not isfile( options.file ):
 		exit("Path to seqence file is invalid!")
  
