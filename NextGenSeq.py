@@ -126,7 +126,8 @@ if opt.search:
 					strt =  exp_seq.find(frag)
 					passTest+=1
 			
-				
+			if len(frags) ==0 : continue
+	
 			if ( (1.*passTest/len(frags) > 0.5 ) ):
 				[align1, align2, malign] = NW.NW( exp_seq, seq, matrix=dnaScoreMatrix )
 

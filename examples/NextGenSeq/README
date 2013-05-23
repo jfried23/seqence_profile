@@ -1,0 +1,47 @@
+A program for analysing DNA seqencing runs. 
+Useful for screening seqencing data of clonning plasmids for those that contain the desired insert seqence.
+Note: Program automatically identifies DNA seqenced in the reversed direction and returns the reverse compliment dna seqences.
+
+required:
+-s a path to a directory containing one or more DNA seqencing 'zip' files
+-f a file containg the DNA seqences to look for in FASTA format
+
+example usage:
+python ../../NextGenSeq.py -s ./input_data/ -r ./input_data/designseq.fasta
+
+to screen:
+Match    304_3-T7-Term_F04 <===> 1045_ssg_1b9l_29
+Match    389_3-T7_B03 <===> 1098_1y12-C
+Match    266_3-T7-Term_C04 <===> 1007_lp5_le18_sym2_rd1
+Match    387_2-T7-Term_C05 <===> 1040_ssg_2znm_81
+Match    392_2-T7-Term_G06 <===> 1192_D87.2.45_DB-B
+Match    387_1-T7-Term_B05 <===> 1040_ssg_2znm_81
+Match    392_1-T7-Term_F06 <===> 1192_D87.2.45_DB-B
+Match    388_3-T7-Term_G05 <===> 1009_lp5_le26_sym2_2
+Match    388_1-T7-Term_E05 <===> 1009_lp5_le26_sym2_2
+Match    389_3-T7-Term_B06 <===> 1098_1y12-C
+Match    389_1-T7-Term_H05 <===> 1098_1y12-C
+Match    304_2-T7-Term_E04 <===> 1045_ssg_1b9l_29
+Match    387_3-T7-Term_D05 <===> 1040_ssg_2znm_81
+Match    390_1-T7-Term_C06 <===> 1110_8helix_D6.1.43_DB-A
+Match    304_1-T7-Term_D04 <===> 1045_ssg_1b9l_29
+Match    360_1-T7-Term_G04 <===> 1101_1gcl-C
+Match    360_3-T7-Term_A05 <===> 1101_1gcl-C
+Match    266_2-T7-Term_B04 <===> 1007_lp5_le18_sym2_rd1
+Match    389_2-T7-Term_A06 <===> 1098_1y12-C
+Match    392_3-T7-Term_H06 <===> 1192_D87.2.45_DB-B
+Match    389_2-T7_A03 <===> 1098_1y12-C
+Match    266_1-T7-Term_A04 <===> 1007_lp5_le18_sym2_rd1
+
+outputs:
+./data/
+	1007_lp5_le18_sym2_rd1.txt   
+	1045_ssg_1b9l_29.txt         
+	1110_8helix_D6.1.43_DB-A.txt
+	1009_lp5_le26_sym2_2.txt     
+	1098_1y12-C.txt              
+	1192_D87.2.45_DB-B.txt
+	1040_ssg_2znm_81.txt         
+	1101_1gcl-C.txt       
+
+data.txt     
