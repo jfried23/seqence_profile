@@ -9,7 +9,7 @@ from string import split, rjust, ljust,center,replace
 def get_user_input():
 	parser = OptionParser()
 	parser.add_option("-f", "--file", dest="file", default=None)
-	parser.add_option("-s", "--seqence", dest="seq")
+	parser.add_option("-s", "--sequence", dest="seq")
 	parser.add_option("--out", dest="out", default=True, action="store_false")
 	parser.add_option("-p", "--phase", dest="phase", default=None)
 	parser.add_option("-a","--analyze", dest="ana", default=True, action="store_false" )
@@ -17,7 +17,7 @@ def get_user_input():
 	#parser.add_option("-Genewiz", dest="genewiz_file", default=None)
 	(options, args) = parser.parse_args()	
 	if options.file and not isfile( options.file ):
-		exit("Path to seqence file is invalid!")
+		exit("Path to sequence file is invalid!")
  
 	return options
 
@@ -40,9 +40,9 @@ def analyze_dna( opt ):
 		aaSeq = dna.auto_phase()
 	
 	aaseq=dna.translate().replace(' ','')[dna.number_offset:]
-	print ">Input seqence"		
+	print ">Input sequence"		
 	print dna.seq+'\n'
-	print ">Digested seqence"
+	print ">Digested sequence"
 	print dna.print_digest()+'\n'
 	print ">Translated to AA"
 	print aaseq 
@@ -67,7 +67,7 @@ except libDNA.InvalidDNASeq:
 	try:
 		analyze_protein(opt)
 	except libAA.InvalidAASeq:
-		print 'Invalid Seqence'
+		print 'Invalid sequence'
 		exit()
 
 
@@ -97,9 +97,9 @@ if opt.out:
 		ii=site
 	splitstr += seq[ii:]
 
-	print ">Input seqence"		
+	print ">Input sequence"		
 	print dna.seq+'\n'
-	print ">Digested seqence"
+	print ">Digested sequence"
 	print splitstr+'\n'
 	print ">Translated to AA"
 	print dna.translate().replace(' ','')[dna.number_offset:]	
@@ -109,7 +109,7 @@ if opt.ana:
 		system('clear')
 		need_clear = False
 	print '*********************************************************************'
-	print '**********              SEQENCE ANALYSIS                *************'
+	print '**********              sequence ANALYSIS                *************'
 	print '*********************************************************************\n'
 	print dna.fancy_print()
 	print '*********************************************************************'

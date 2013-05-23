@@ -20,7 +20,7 @@ optionparser.add_option( '--search', default=True, action="store_false", help='S
 
 ###############Utility Functions###############################################
 def longest_sub_seq_without( seq, char):
-	'''Returns the longest subseqence in seq without an instance of char
+	'''Returns the longest subsequence in seq without an instance of char
 	'''
 	ns = [m.start() for m in re.finditer(char, seq)]
 	s0,s1=0,0
@@ -94,7 +94,7 @@ def Read_RefDataFASTA( path ):
 
 
 	
-seq_data = Read_sequencing( opt.seqencing_data )	
+seq_data = Read_sequencing( opt.sequencing_data )	
 ref_data = Read_RefDataFASTA( opt.ref_data )
 
 gbl_out = open('data.txt','w')
