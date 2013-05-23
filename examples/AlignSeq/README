@@ -1,4 +1,4 @@
-Simple program for finding optimal seqence alignment between two amino-acid or two dna seqences using standard conservation matrices 
+Simple program for finding optimal sequence alignment between two amino-acid or two dna sequences using standard conservation matrices
 
 example use
 %> python ../../AlignSeq.py 

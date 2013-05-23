@@ -109,7 +109,7 @@ class Fragment( object ):
 		self.__seq_from_codons()
 
 	def seq(self, coding=True):
-		"""Returns the seqence of the fragment in the 'sence' sence """
+		"""Returns the sequence of the fragment in the 'sence' sence """
 		if coding:
 			if self.is_rev(): return compliment(self.__seq)
 			else: return self.__seq

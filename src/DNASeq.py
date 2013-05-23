@@ -14,8 +14,8 @@ class WrongAA(Exception):
 ###########UTILITTY FUNCTIONS ##########################################################################
 
 def split_codons( seq, phase=0):
-	""" Splits the input seqence into a list of seqence triplets. eq [ 'ATG','CGA','GCN',...]
-            If phase != 0 (and/or the seqence is not evenly divisable into units of 3)
+	""" Splits the input sequence into a list of seqence triplets. eq [ 'ATG','CGA','GCN',...]
+            If phase != 0 (and/or the sequence is not evenly divisable into units of 3)
             the first ( and/or last ) triplet will be padded with empty chars ' ' to make it
 	    a triplet.
 	"""
@@ -34,7 +34,7 @@ def split_codons( seq, phase=0):
 
 def translate( trips, CodonObj = None ):
 	"""
-  	Returns translated protein seqence from a list of seqence triplets
+  	Returns translated protein sequence from a list of seqence triplets
         Seq is out put with a space on either side of the 1-letter amino-acid code   
 	"""
 	if not CodonObj:  CodonObj = CodonData()
@@ -45,7 +45,7 @@ def translate( trips, CodonObj = None ):
 	return s
 
 def count_bases( seq ):
-	""" returns a dictionary object mapping each unique char in a seqence to the
+	""" returns a dictionary object mapping each unique char in a sequence to the
 	    the number of occurances.
 	"""
 	count={'a':0,'t':0,'g':0,'c':0,'n':0}
@@ -66,21 +66,21 @@ def GC_content(seq, num=None):
 def MW( seq, num = None ):
 	""" 
 	Returns the molecular weight of the DNA sequence 
-	If unknown nuclotides 'n' are present in the seqence uses an
+	If unknown nuclotides 'n' are present in the sequence uses an
         average MW of ~309 g/Mol for that position.
         This function assumes the 5' is phosphorilated.   
 	"""
 	if not num: num = count_bases(seq)
-	#if num['n']!=0: print "Caution MW calculation will use an average base MW for the 'N' nucleotides in this seqence!"
+	#if num['n']!=0: print "Caution MW calculation will use an average base MW for the 'N' nucleotides in this sequence!"
         return round((num['a']*313.21)+(num['t']*304.2)+(num['c']*289.18)+(num['g']*329.21)+(num['n']*308.95),1)
 
 
 def E260( seq, num=None ):
-	""" Returns the calculated molar extinction coefficent of DNA seqence
+	""" Returns the calculated molar extinction coefficent of DNA sequence
 	    for single and double stranded DNA in units of 1/(Mol*L) using nearest neighbor 
             extenction coffecients of bases. If unknown nucleotides 'n' are present in the 
-            seqences calculates extenction coefficents using 33 A/ng and 55 A/ng averages
-            that are valid for long DNA seqences.	
+            sequences calculates extenction coefficents using 33 A/ng and 55 A/ng averages
+            that are valid for long DNA sequences.	
 	 """
 	if not num: num = count_bases(seq)
 
@@ -110,7 +110,7 @@ def E260( seq, num=None ):
 
 def reverse_compliment(seq):
 	"""
-	Returns the compliment DNA seqence with same polarty.  5'->3' input maps to 5'->3' output
+	Returns the compliment DNA sequence with same polarty.  5'->3' input maps to 5'->3' output
 	Unknown 'n' nucloetides are assigned compliment partners of 'n'
 	"""
 	s=''
@@ -119,7 +119,7 @@ def reverse_compliment(seq):
 
 def compliment(seq):
 	"""
-	Returns the compliment DNA seqence with same polarty.  5'->3' input maps to 5'->3' output
+	Returns the compliment DNA sequence with same polarty.  5'->3' input maps to 5'->3' output
 	Unknown 'n' nucloetides are assigned compliment partners of 'n'
 	"""
 	s=''
@@ -167,7 +167,7 @@ class DNASeq( object ):
 
 	def fetch_position( self, number, expected_AA=None ):
 		""" Returns the start position of the first base in the triplet encoding
-		    seqence position number. As optional sanity check the char expected_AA will
+		    sequence position number. As optional sanity check the char expected_AA will
 		    ensure the expected AA is in the designated position
 		"""
 		CodonObj = CodonData()
@@ -283,9 +283,9 @@ class DNASeq( object ):
 		
 	def auto_phase( self, sub_seq=None ):
 		"""
-		Finds a reading frame containing the input protein seqence (sub_seq). If no sub_seq is provided or
+		Finds a reading frame containing the input protein sequence (sub_seq). If no sub_seq is provided or
 		the sub_seq is not found in any open reading frame, it uses the phase that generates the longest ORF.
-		Returns a tuple (ORF_seq, found_sub) where ORF_seq is translated protein seqence of the longest open
+		Returns a tuple (ORF_seq, found_sub) where ORF_seq is translated protein sequence of the longest open
 		reading frame and found_sub is a boolenian indicating if a specified sub_seq is contained
 		within the ORF_seq. If argument sub_seq is default (None) found_sub will default to False
 		"""

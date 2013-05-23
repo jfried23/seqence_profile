@@ -8,7 +8,7 @@ import ref.aa_data as ref
 import ref.dna_data as dna_ref
 
 def get_ORFs(seq):
-	""" Trivial split wrapper. Takes a protein single letter seqence and returns 
+	""" Trivial split wrapper. Takes a protein single letter sequence and returns 
 	the string split according to stop codons (1-Letter code 'X') 
 	"""
 	return seq.split('X') 
@@ -29,7 +29,7 @@ class AASeq( object ):
 		for letter in in_seq.upper():
 			if letter not in ref.AA:
 				if letter == ' ': continue 
-				print 'Warning the seqence member '+letter+' is not a recgnized Amino Acid! Skipping'
+				print 'Warning the sequence member '+letter+' is not a recgnized Amino Acid! Skipping'
 				raise InvalidAASeq
 			s+=letter.upper()
 
@@ -56,7 +56,7 @@ class AASeq( object ):
 		return round(( (nTyr*1490)+(nTrp*5500)+(nCys*125) ),1)	
 
 	def suggest_dna(self, best=False, CodonObj=None):
-		"""Translates the self.seq protein seqence to DNA
+		"""Translates the self.seq protein sequence to DNA
 		If best == False : will pick a random codon with freqency proportionals to freqency table
 		If best == True  : will always pick the codon with the highst freqency in freqency table
 		"""

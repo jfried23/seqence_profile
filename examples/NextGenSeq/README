@@ -1,6 +1,6 @@
-A program for analysing DNA seqencing runs. 
-Useful for screening seqencing data of clonning plasmids for those that contain the desired insert seqence.
-Note: Program automatically identifies DNA seqenced in the reversed direction and returns the reverse compliment dna seqences.
+A program for analyzing DNA sequencing runs.  
+Useful for screening sequencing data of cloning plasmids for those that contain the desired insert sequence. 
+Note: Program automatically identifies DNA sequenced in the reversed direction and returns the reverse compliment dna sequences.
 
 required:
 -s a path to a directory containing one or more DNA seqencing 'zip' files
