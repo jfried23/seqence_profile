@@ -5,7 +5,7 @@ from string import lower
 from optparse import OptionParser
 
 optionparser = OptionParser()
-optionparser.add_option( '-f', '--file_path', help='path to seqencing zip file' )
+optionparser.add_option( '-f', '--file_path', help='path to sequencing zip file' )
 optionparser.add_option( '--sub', default=None )
 
 

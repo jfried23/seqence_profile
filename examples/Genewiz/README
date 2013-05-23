@@ -2,7 +2,7 @@ Extract sequencing info from a sequence data zip file
 Note: Program automatically identifies DNA sequenced in the reversed direction and returns the reverse compliment dna sequences.
 
 
--f path to the seqencing zip file
+-f path to the sequencing zip file
 --sub a protein sub seqence to look for in each dna seqence (useful for finding His tags ect..)
 
 

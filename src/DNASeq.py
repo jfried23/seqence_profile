@@ -15,7 +15,7 @@ class WrongAA(Exception):
 
 def split_codons( seq, phase=0):
 	""" Splits the input sequence into a list of seqence triplets. eq [ 'ATG','CGA','GCN',...]
-            If phase != 0 (and/or the sequence is not evenly divisable into units of 3)
+            If phase != 0 (and/or the sequence is not evenly divisible into units of 3)
             the first ( and/or last ) triplet will be padded with empty chars ' ' to make it
 	    a triplet.
 	"""
@@ -34,7 +34,7 @@ def split_codons( seq, phase=0):
 
 def translate( trips, CodonObj = None ):
 	"""
-  	Returns translated protein sequence from a list of seqence triplets
+  	Returns translated protein sequence from a list of sequence triplets
         Seq is out put with a space on either side of the 1-letter amino-acid code   
 	"""
 	if not CodonObj:  CodonObj = CodonData()
@@ -66,22 +66,24 @@ def GC_content(seq, num=None):
 def MW( seq, num = None ):
 	""" 
 	Returns the molecular weight of the DNA sequence 
-	If unknown nuclotides 'n' are present in the sequence uses an
+	If unknown nucleotides 'n' are present in the sequence uses an
         average MW of ~309 g/Mol for that position.
-        This function assumes the 5' is phosphorilated.   
+        This function assumes the 5' is phosphorylated.   
 	"""
+	
 	if not num: num = count_bases(seq)
 	#if num['n']!=0: print "Caution MW calculation will use an average base MW for the 'N' nucleotides in this sequence!"
         return round((num['a']*313.21)+(num['t']*304.2)+(num['c']*289.18)+(num['g']*329.21)+(num['n']*308.95),1)
 
 
 def E260( seq, num=None ):
-	""" Returns the calculated molar extinction coefficent of DNA sequence
+	""" Returns the calculated molar extinction coefficient of DNA sequence
 	    for single and double stranded DNA in units of 1/(Mol*L) using nearest neighbor 
-            extenction coffecients of bases. If unknown nucleotides 'n' are present in the 
-            sequences calculates extenction coefficents using 33 A/ng and 55 A/ng averages
+            extinction coefficients of bases. If unknown nucleotides 'n' are present in the 
+            sequences calculates extinction coefficients using 33 A/ng and 55 A/ng averages
             that are valid for long DNA sequences.	
-	 """
+	"""
+	
 	if not num: num = count_bases(seq)
 
 	if num['n'] != 0:
@@ -111,7 +113,7 @@ def E260( seq, num=None ):
 def reverse_compliment(seq):
 	"""
 	Returns the compliment DNA sequence with same polarty.  5'->3' input maps to 5'->3' output
-	Unknown 'n' nucloetides are assigned compliment partners of 'n'
+	nucleotides are assigned compliment partners of 'n'
 	"""
 	s=''
 	for letter in seq: s+=ref.DNA_comp[letter]
@@ -120,7 +122,7 @@ def reverse_compliment(seq):
 def compliment(seq):
 	"""
 	Returns the compliment DNA sequence with same polarty.  5'->3' input maps to 5'->3' output
-	Unknown 'n' nucloetides are assigned compliment partners of 'n'
+	Unknown 'n' nucleotides are assigned compliment partners of 'n'
 	"""
 	s=''
 	for letter in seq: s+=ref.DNA_comp[letter]
@@ -184,7 +186,7 @@ class DNASeq( object ):
 
 	def digest( self ):
 		"""
-		Returns a dictionary mapping a restriction enzyme cut site to a restiction enzyme name
+		Returns a dictionary mapping a restriction enzyme cut site to a restriction enzyme name
 		ie {target_site_position:"EnzymeName"}
 		"""
 		digest={}
@@ -196,7 +198,7 @@ class DNASeq( object ):
 
 	def insert_restrict( self, enzyme_name, pos, phase ):
 		"""
-		Inserts a restrcition site at the specified AA positions with the specifed phase.
+		Inserts a restriction site at the specified AA positions with the specified phase.
 		Phase can be positive or negative and is not generally limited to the range [0,3)
 		"""
 		if enzyme_name not in ref.restriction.keys():
@@ -237,7 +239,7 @@ class DNASeq( object ):
 		line=''
 		if extras: line+=self.info_str()
 
-		prefix = (self.trips[0].count(' '))*' '   ######Fixed to give the proper spaceing for 1st line
+		prefix = (self.trips[0].count(' '))*' '   ######Fixed to give the proper specified for 1st line
 		seq=prefix+self.seq
 		num_lines,remain= divmod( len(seq), lw )
 		aaSeq= translate(self.trips)
@@ -286,7 +288,7 @@ class DNASeq( object ):
 		Finds a reading frame containing the input protein sequence (sub_seq). If no sub_seq is provided or
 		the sub_seq is not found in any open reading frame, it uses the phase that generates the longest ORF.
 		Returns a tuple (ORF_seq, found_sub) where ORF_seq is translated protein sequence of the longest open
-		reading frame and found_sub is a boolenian indicating if a specified sub_seq is contained
+		reading frame and found_sub is a boolean indicating if a specified sub_seq is contained
 		within the ORF_seq. If argument sub_seq is default (None) found_sub will default to False
 		"""
 		best_phi, best_ORF = 0, ''

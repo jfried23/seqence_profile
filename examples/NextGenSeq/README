@@ -1,10 +1,10 @@
 A program for analyzing DNA sequencing runs.  
 Useful for screening sequencing data of cloning plasmids for those that contain the desired insert sequence. 
-Note: Program automatically identifies DNA sequenced in the reversed direction and returns the reverse compliment dna sequences.
+Note: Program automatically identifies DNA sequenced in the reversed direction and returns the reverse compliment DNA sequences.
 
 required:
--s a path to a directory containing one or more DNA seqencing 'zip' files
--f a file containg the DNA seqences to look for in FASTA format
+-s a path to a directory containing one or more DNA sequencing 'zip' files
+-f a file containing the DNA sequences to look for in FASTA format
 
 example usage:
 python ../../NextGenSeq.py -s ./input_data/ -r ./input_data/designseq.fasta
@@ -45,3 +45,5 @@ outputs:
 	1101_1gcl-C.txt       
 
 data.txt     
+
+

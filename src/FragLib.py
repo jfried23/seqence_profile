@@ -20,7 +20,7 @@ def compare_codons( c1, c2 ):
 	else: return False
 
 def LastIndex(alist, value):
-	""" returns the last occuernce of an value in a list """
+	""" returns the last occurrence of an value in a list """
 	return len(alist) - alist[-1::-1].index(value) -1
 
 
@@ -64,7 +64,7 @@ class Fragment( object ):
 	def __len__(self): return len(self.seq().replace(' ',''))
 
 	def overlaps(self, frag2, minOver=8 ):
-		"""Find if one Fragment overlaps another Fragment object returns string indceces that overlap
+		"""Find if one Fragment overlaps another Fragment object returns string indexes that overlap
 		   first value is overlap of self, second value overlap of its binding partner """
 		if self.is_fwd() == frag2.is_fwd(): return False 
 		pos=-1
@@ -109,7 +109,7 @@ class Fragment( object ):
 		self.__seq_from_codons()
 
 	def seq(self, coding=True):
-		"""Returns the sequence of the fragment in the 'sence' sence """
+		"""Returns the sequence of the fragment in the 'sense' sense """
 		if coding:
 			if self.is_rev(): return compliment(self.__seq)
 			else: return self.__seq
@@ -143,7 +143,7 @@ class FragLib( object ):
 	
 
 	def __order_frags(self):
-		""" Automoatically sorts the fragment list into the proper assembly order
+		""" Automatically  sorts the fragment list into the proper assembly order
 		and ensures all the fragments have a logical place
 		"""
 		for frag1 in self.frags:

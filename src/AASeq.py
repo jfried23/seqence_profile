@@ -29,7 +29,7 @@ class AASeq( object ):
 		for letter in in_seq.upper():
 			if letter not in ref.AA:
 				if letter == ' ': continue 
-				print 'Warning the sequence member '+letter+' is not a recgnized Amino Acid! Skipping'
+				print 'Warning the sequence member '+letter+' is not a recognized Amino Acid! Skipping'
 				raise InvalidAASeq
 			s+=letter.upper()
 
@@ -38,7 +38,7 @@ class AASeq( object ):
 			if len(one) > len(self.seq): self.seq=one
 	
 	def MW( self ):
-		"""Calculates the molecular weight of self.seq in daltons
+		"""Calculates the molecular weight of self.seq in Daltons
 		"""
 		weight=17.0
 		for letter in self.seq:
@@ -57,8 +57,8 @@ class AASeq( object ):
 
 	def suggest_dna(self, best=False, CodonObj=None):
 		"""Translates the self.seq protein sequence to DNA
-		If best == False : will pick a random codon with freqency proportionals to freqency table
-		If best == True  : will always pick the codon with the highst freqency in freqency table
+		If best == False : will pick a random codon with frequency proportional to frequency table
+		If best == True  : will always pick the codon with the highest frequency in frequency table
 		"""
 		dna=''
 		if not CodonObj:  CodonObj = CodonData()	

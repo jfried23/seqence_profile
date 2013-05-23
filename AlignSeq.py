@@ -15,11 +15,11 @@ def get_user_input():
 		if len(args) != 2:
 			a=''
 			for one in args: a+= 2*'\n'+one  
-			sys.exit("Invalid seqence arguments. "+ a+'\n')  
+			sys.exit("Invalid sequence arguments. "+ a+'\n')  
 		options.seq = args
 	if args == []:
-		seq1 = raw_input("Enter seqence 1: ")
-		seq2 = raw_input("Enter seqence 2: ")
+		seq1 = raw_input("Enter sequence 1: ")
+		seq2 = raw_input("Enter sequence 2: ")
 		options.seq = [seq1,seq2]
 	return options
 
@@ -50,7 +50,7 @@ except libDNA.InvalidDNASeq:
 		obj2 = libAA.AASeq( opt.seq[1] )
 		my_matrix =  NW.ProtScore()
 	except libAA.InvalidAASeq:
-		print 'Invalid Seqence'
+		print 'Invalid Sequence'
 		exit()  
 
 [s1,s2,s3] =  NW.NW( obj1.seq, obj2.seq, matrix = my_matrix )

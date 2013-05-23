@@ -7,7 +7,7 @@ filename = os.path.join(dir, '../ref/best_expression_codons_Ecoli')
 
 class CodonData( object ):
 	def __init__(self,path=filename):
-		self.__AA={}   #dictonary to list of freqency codon_pairs	
+		self.__AA={}   #dictionary to list of frequency codon pairs		
 		self.__trans={}
 		self.read_codon_table(path)
 

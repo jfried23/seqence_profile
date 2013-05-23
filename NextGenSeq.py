@@ -9,10 +9,11 @@ from string import lower
 from optparse import OptionParser
 
 optionparser = OptionParser()
-optionparser.add_option( '-s', '--seqencing_data', help='path to seqencing zip file' )
-optionparser.add_option( '-r', '--ref_data', help='path to refrence file' )
-optionparser.add_option( '-n', '--num_char', default=50, help='path to refrence file' )
-optionparser.add_option( '--search', default=True, action="store_false", help='Search all the refrence seqecnces against all the seqencing results.' )
+optionparser.add_option( '-s', '--sequencing_data', help='path to sequencing zip file' )
+optionparser.add_option( '-r', '--ref_data', help='path to reference file' )
+optionparser.add_option( '-n', '--num_char', default=50, help='path to reference file' )
+optionparser.add_option( '--search', default=True, action="store_false", help='Search all the reference sequences against all the sequencing results.' )
+
 
 
 (opt,args) = optionparser.parse_args()
@@ -57,7 +58,7 @@ def read_assembly(lines):
 		seq+=line.rstrip()
 	return (name,seq)
 
-def Read_Seqencing( path ):
+def Read_sequencing( path ):
 	seq_files=[]
 	if os.path.isdir(path):
 		seq_files = glob(path+'*.zip')
@@ -93,7 +94,7 @@ def Read_RefDataFASTA( path ):
 
 
 	
-seq_data = Read_Seqencing( opt.seqencing_data )	
+seq_data = Read_sequencing( opt.seqencing_data )	
 ref_data = Read_RefDataFASTA( opt.ref_data )
 
 gbl_out = open('data.txt','w')
