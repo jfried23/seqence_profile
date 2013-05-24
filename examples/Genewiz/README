@@ -3,7 +3,7 @@ Note: Program automatically identifies DNA sequenced in the reversed direction a
 
 
 -f path to the sequencing zip file
---sub a protein sub seqence to look for in each dna seqence (useful for finding His tags ect..)
+--sub a protein sub sequence to look for in each dna seqence (useful for finding His tags ect..)
 
 
 example

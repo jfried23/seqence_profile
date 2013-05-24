@@ -14,7 +14,7 @@ class WrongAA(Exception):
 ###########UTILITTY FUNCTIONS ##########################################################################
 
 def split_codons( seq, phase=0):
-	""" Splits the input sequence into a list of seqence triplets. eq [ 'ATG','CGA','GCN',...]
+	""" Splits the input sequence into a list of sequence triplets. eq [ 'ATG','CGA','GCN',...]
             If phase != 0 (and/or the sequence is not evenly divisible into units of 3)
             the first ( and/or last ) triplet will be padded with empty chars ' ' to make it
 	    a triplet.

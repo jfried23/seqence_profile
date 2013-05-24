@@ -6,7 +6,7 @@ import ref.dna_data as ref
 
 def get_user_input():
 	parser = OptionParser()
-	parser.add_option("-s", "--seqence", dest="seq")
+	parser.add_option("-s", "--sequence", dest="seq")
 	parser.add_option("-p", dest="phase", default=0)
 	parser.add_option("-x", "--cutsite", dest="cutsite", default=1)
 
