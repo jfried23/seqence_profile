@@ -7,6 +7,7 @@ from string import split, ascii_lowercase
 from glob import glob
 from string import lower
 from optparse import OptionParser
+from random import randrange
 
 optionparser = OptionParser()
 optionparser.add_option( '-s', '--sequencing_data', help='path to sequencing zip file' )
@@ -140,12 +141,21 @@ if opt.search:
 
 				seqobj1 = libDNA.DNASeq( exp_seq )
 				refobj1 = libDNA.DNASeq( seq )
-				
-				best_ORF1, found_sub = seqobj1.auto_phase('HHHH')  #Check for his tag
-				if not found_sub: best_ORF1, found_sub = seqobj1.auto_phase()    #Else take longest ORF
-				
+			
+				#########first phase the refence object
 				best_ORF2, found_sub = refobj1.auto_phase('HHHH')  #Check for his tag
 				if not found_sub: best_ORF2, found_sub = refobj1.auto_phase()    #Else take longest ORF
+				
+				########Use the refrence object best open reading frame to phase the seqencing object
+				aaSeq_target = refobj1.translate().replace(' ','')
+				targets=[]
+
+				for x in range(0,4):  ######Give 4 tries to find matching subseqence
+					t = randrange(0, len(aaSeq_target)-8, 1)
+					
+					best_ORF1, found_sub = seqobj1.auto_phase( aaSeq_target[t:t+7] )
+					if found_sub: break
+					
 				
 				[aalign1, aalign2, aamalign] = NW.NW( best_ORF1 , best_ORF2, matrix=prtScoreMatrix )
 			
