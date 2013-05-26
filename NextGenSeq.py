@@ -74,7 +74,7 @@ def Read_sequencing( path ):
 				if '.seq' not in f: continue
 				name,seq = read_assembly(zf.open(f,'r').readlines())
 				name = name.split('.')[0]
-				if 'Term' in f: seq = libDNA.reverse_compliment(seq.lower())
+				if 'Term' in f: seq = libDNA.reverse_complement(seq.lower())
 				DNAseq_objs[name]= seq.lower().replace(' ','')					
 		except: 
 			print "Can not open "+File
@@ -150,7 +150,7 @@ if opt.search:
 				aaSeq_target = refobj1.translate().replace(' ','')
 				targets=[]
 
-				for x in range(0,4):  ######Give 4 tries to find matching subseqence
+				for i in range(0,4):  ######Give 4 tries to find matching subseqence
 					t = randrange(0, len(aaSeq_target)-8, 1)
 					
 					best_ORF1, found_sub = seqobj1.auto_phase( aaSeq_target[t:t+7] )

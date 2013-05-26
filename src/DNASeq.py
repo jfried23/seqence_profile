@@ -94,7 +94,7 @@ def E260( seq, num=None ):
 		return round(sigmaSS1,1), round(sigmaDS,1)
 					
 	sigmaSS1,sigmaSS2, sigmaDS = 0,0,0
-	rc=reverse_compliment(seq)
+	rc=reverse_complement(seq)
 	i,ii=0,len(seq)
 	while i < ii:
 		sigmaSS1+= ref.NA_E260[ seq[i:i+2] ]
@@ -110,19 +110,19 @@ def E260( seq, num=None ):
 
 	return round(sigmaSS1,1), round(sigmaDS,1)
 
-def reverse_compliment(seq):
+def reverse_complement(seq):
 	"""
-	Returns the compliment DNA sequence with same polarty.  5'->3' input maps to 5'->3' output
-	nucleotides are assigned compliment partners of 'n'
+	Returns the complement DNA sequence with same polarty.  5'->3' input maps to 5'->3' output
+	nucleotides are assigned complement partners of 'n'
 	"""
 	s=''
 	for letter in seq: s+=ref.DNA_comp[letter]
 	return s[::-1]
 
-def compliment(seq):
+def complement(seq):
 	"""
-	Returns the compliment DNA sequence with same polarty.  5'->3' input maps to 5'->3' output
-	Unknown 'n' nucleotides are assigned compliment partners of 'n'
+	Returns the complement DNA sequence with same polarty.  5'->3' input maps to 5'->3' output
+	Unknown 'n' nucleotides are assigned complement partners of 'n'
 	"""
 	s=''
 	for letter in seq: s+=ref.DNA_comp[letter]

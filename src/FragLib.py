@@ -1,6 +1,6 @@
 from string import split, ljust, rjust, lower, center, join
 import sys
-from DNASeq import DNASeq, compliment,reverse_compliment,split_codons,translate, WrongAA
+from DNASeq import DNASeq, complement,reverse_complement,split_codons,translate, WrongAA
 from CodonData import CodonData
 
 def print_frag( frag ):
@@ -111,7 +111,7 @@ class Fragment( object ):
 	def seq(self, coding=True):
 		"""Returns the sequence of the fragment in the 'sense' sense """
 		if coding:
-			if self.is_rev(): return compliment(self.__seq)
+			if self.is_rev(): return complement(self.__seq)
 			else: return self.__seq
 		else:
 			return self.__seq
@@ -122,7 +122,7 @@ class Fragment( object ):
 			t_seq+=self.coding_codon[one]
 		t_seq = t_seq.replace(' ','')
 		if self.is_rev():
-			t_seq = compliment( t_seq )
+			t_seq = complement( t_seq )
 		self.__seq = t_seq
 		self.updated=True
 
@@ -307,7 +307,7 @@ class FragLib( object ):
 			for cod in sorted(frag.coding_codon.keys()):
 				new_frag_seq += frag.coding_codon[cod]
 				if cod == int(pos): new_frag_seq += new_dna_seq
-			if frag.is_rev(): new_frag_seq  = compliment(new_frag_seq.replace(' ','') )
+			if frag.is_rev(): new_frag_seq  = complement(new_frag_seq.replace(' ','') )
 			frag._Fragment__seq = new_frag_seq 
 		self.assemble(self.min_overlap )	
 			

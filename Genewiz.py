@@ -43,7 +43,7 @@ print "./"+out_name+'_aa.fasta'
 for f in files:
 	if ".seq" not in f: continue
 	name,seq=read_assembly(zf.open(f,'r').readlines())
-	if 'Term' in f: seq= libDNA.reverse_compliment(seq)
+	if 'Term' in f: seq= libDNA.reverse_complement(seq)
 		
 	if len(seq) < 20: continue	
 
