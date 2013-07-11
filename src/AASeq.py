@@ -46,6 +46,13 @@ class AASeq( object ):
 			weight+=ref.AAMW[letter]
 		return round(weight,1)
 
+	def E205( self ):
+		e205 = 0
+		for key, value in ref.E205.items():
+			e205 += value*len( [m.start() for m in finditer(key, self.seq)])
+		e205 += (len(self)-1)*2780
+		return round( e205,2)
+
 	def E280( self ):
 		"""Returns the calculated molar absorptivity of protein fragment self.seq
 		calculated at 280nm in water.

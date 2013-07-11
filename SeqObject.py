@@ -23,7 +23,8 @@ def get_user_input():
 
 def analyze_protein( opt ):
 	AAobj = libAA.AASeq( opt.seq )
-	print '\nProtein molar extenction coefficent: '+str(round(AAobj.E280()/1000.,2))+" 1/mM*L."
+	print '\nE280: '+str(round(AAobj.E280()/1000.,2))+" 1/mM*L."
+	print '\nE205: '+str(round(AAobj.E205()/1000.,2))+" 1/mM*L."
 	print 'Protein molecular weight: '+ str(round(AAobj.MW()/1000.,2))+" kDa."
 
 def analyze_dna( opt ):
