@@ -78,6 +78,17 @@ def NW(string1, string2, open_gap=-100, ext_gap = -3, matrix=None):
     	align2 = ''
 	malign = ''
 	while [i,j] != [0,0]:
+        	if Pointers[i][j] == -1:
+            		align1 = align1 + '-'
+            		align2 = align2 + string2[j-1]
+			malign+=' '
+            		j = j - 1
+        	elif Pointers[i][j] == 1:
+            		align1 = align1 + string1[i-1]
+            		align2 = align2 + '-'
+			malign+=' '
+            		i = i - 1
+
         	if Pointers[i][j] == 2:
            		align1 = align1 + string1[i-1]
             		align2 = align2 + string2[j-1]
@@ -86,16 +97,7 @@ def NW(string1, string2, open_gap=-100, ext_gap = -3, matrix=None):
 			else: malign+=' '
             		i = i - 1
            		j = j - 1
-        	elif Pointers[i][j] == -1:
-            		align1 = align1 + '-'
-            		align2 = align2 + string2[j-1]
-			malign+=' '
-            		j = j - 1
-        	else:
-            		align1 = align1 + string1[i-1]
-            		align2 = align2 + '-'
-			malign+=' '
-            		i = i - 1
+
 
     	# the alignments have been created backwards, so we need to reverse them:
     	align1 = align1[::-1]
