@@ -1,7 +1,7 @@
 # sequence_profile
 This package contains an assembly of software tools I built to assist DNA cloning and gene-design in synthetic biology workflows.
 
-*****Examples of each application can be found in the "/examples" sub-directory, but I will quickly sumerize the commandline tools that are built upon this package. ****
+*****Examples of each application can be found in the "/examples" sub-directory, but I will quickly sumerize the commandline tools included in the main directory that are built upon this package. ****
 
 AlignSeq.py -- demonstrates (protein/DNA) Needleman-Wunsch dynamic programming alignment functionality implemented in python.
 
